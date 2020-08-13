@@ -1,0 +1,50 @@
+body{
+    background-image: linear-gradient(to right, rgba(0,128,128,0), rgba(0,128,128,1));
+}
+.form-group{
+    text-align: center;
+    margin: auto;
+   
+}
+h1{
+    text-align: center;
+    font-family: 'Lemonada', cursive;
+    font-weight: 700;
+}
+form{
+    font-family: 'Lemonada', cursive;
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border: 3px outset gray;
+    background-color: honeydew;
+    width: 60%;
+    height: 60%;
+   
+}
+input{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    
+}
+button{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: teal;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+button:hover {opacity: 1;}
