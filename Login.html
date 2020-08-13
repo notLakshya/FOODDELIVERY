@@ -1,0 +1,113 @@
+<html>
+    <head>
+      <title>Register</title>
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous"></script>
+       <link rel="stylesheet" href="css/Login.css" type="text/css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+       <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+    
+    </head>
+    <body>
+     
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">BITE BOX</h1>
+        <p class="lead">Get the most delicious food on campus delivered to you.</p>
+      </div>
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="" style="width:100%">
+          <div class="text">Caption Text</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="" style="width:100%">
+          <div class="text">Caption Two</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="" style="width:100%">
+          <div class="text">Caption Three</div>
+        </div>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+        
+
+    </div>
+     
+    
+    
+    <div class="container-fluid">
+        <h3>Let's Get You Started</h3>
+      <button 
+		    id="signup"
+      > 
+      <i class="fab fa-google fa-3x"></i>
+      </button>
+      </div>
+      <div class="Low">
+        <link>Contact us <i class="fas fa-envelope-square"></i></link>
+        <p>CopyRight GOGA INC.</p>
+      </div>
+      <script src="js/index.js" ></script>
+      <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        </script>
+        
+      <script>
+          firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+                 var userId = firebase.auth().currentUser.uid;
+
+                 firebase.database().ref('Users/' + userId).once('value').then(function(snapshot){
+                   if(snapshot.val()){
+                    window.location.href="Main.html";
+                   }else{
+                    window.location.href="Accountsettings.html";
+                   }
+                 })
+                    
+          
+          } 
+        });
+      </script>
+    </body>
+   
+</html>

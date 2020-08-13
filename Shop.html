@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Shop</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+      
+    </head>
+    <body>
+      <nav  class="navbar navbar-light" style="background-color: teal;">
+        <a class="navbar-brand font-weight-bold" style="font-family:'Lemonada', cursive" href="Main.html">Bite Box</a>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" style="font-family: 'Lemonada', cursive;">
+              <a class="nav-link" href="Main.html">Home</a>
+            </li>
+          
+          </ul>
+        
+            <a class="nav-link"  style="color: black;" href="Cart.html"><i class="fas fa-shopping-cart fa-2x "></i></a>
+            <a class="nav-link" id="bye"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+          
+      </nav>
+      <div class="row container">
+        <div class="col-4">
+          <img src="" alt="https://cdn3.iconfinder.com/data/icons/hotel-and-transport/512/hotel_transport_fork_plate_spoon_eat-512.png"  >
+        </div>
+        <div class="col-4" id="please">
+        
+        </div>
+        <div class="col-4">
+          Empty
+        </div>
+      </div>
+             <div id="menu">
+               
+             </div>
+        <script src="js/index.js" ></script>
+        <script src="js/shop.js"></script>
+        <script>
+             firebase.auth().onAuthStateChanged(function(user) {
+          if (!user) {
+           window.location.href="Login.html";
+          }});
+        </script>
+    </body>
+</html>
